@@ -1,0 +1,21 @@
+/* Custom CSS for mobile and desktop responsiveness */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .card-img-top {
+        width: 100%;
+        height: auto;
+    }
+}
