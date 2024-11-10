@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern College Website</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Styles -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow fixed w-full z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <a href="#" class="text-2xl font-bold text-blue-600">College Name</a>
+      <nav class="space-x-6">
+        <a href="#about" class="hover:text-blue-500 transition">About</a>
+        <a href="#courses" class="hover:text-blue-500 transition">Courses</a>
+        <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-20 min-h-screen flex items-center justify-center">
+    <div class="container text-center fade-in">
+      <h1 class="text-5xl font-bold">Welcome to Our College</h1>
+      <p class="mt-4 text-lg">Your journey to excellence starts here</p>
+      <a href="#about" class="mt-6 inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-gray-100 transition duration-300">Explore More</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-900 fade-in">About Us</h2>
+      <p class="mt-4 text-gray-600 fade-in">We are committed to providing world-class education and nurturing talent for a brighter future.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+        <div class="bg-blue-50 p-6 rounded-lg shadow-md fade-in hover:shadow-lg transform hover:scale-105 transition">
+          <h3 class="text-xl font-semibold text-blue-600">Experienced Faculty</h3>
+          <p class="mt-2 text-gray-600">Our faculty members bring in-depth expertise and dedication to each student.</p>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-lg shadow-md fade-in hover:shadow-lg transform hover:scale-105 transition">
+          <h3 class="text-xl font-semibold text-blue-600">Modern Facilities</h3>
+          <p class="mt-2 text-gray-600">State-of-the-art labs, libraries, and classrooms for an enriching experience.</p>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-lg shadow-md fade-in hover:shadow-lg transform hover:scale-105 transition">
+          <h3 class="text-xl font-semibold text-blue-600">Vibrant Campus Life</h3>
+          <p class="mt-2 text-gray-600">Engage in extracurriculars, clubs, and events that complement your academics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses" class="bg-gray-50 py-20">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-900 fade-in">Our Courses</h2>
+      <p class="mt-4 text-gray-600 fade-in">Explore a variety of programs designed to equip you with the skills you need to succeed.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+        <div class="bg-white p-6 rounded-lg shadow-md fade-in hover:shadow-lg transform hover:scale-105 transition">
+          <h3 class="text-xl font-semibold text-blue-600">Computer Science</h3>
+          <p class="mt-2 text-gray-600">Master programming, software development, and AI technologies.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md fade-in hover:shadow-lg transform hover:scale-105 transition">
+          <h3 class="text-xl font-semibold text-blue-600">Business Administration</h3>
+          <p class="mt-2 text-gray-600">Learn management and leadership skills for the business world.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md fade-in hover:shadow-lg transform hover:scale-105 transition">
+          <h3 class="text-xl font-semibold text-blue-600">Arts & Humanities</h3>
+          <p class="mt-2 text-gray-600">Study history, literature, and culture to broaden your perspective.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-900 fade-in">Get in Touch</h2>
+      <p class="mt-4 text-gray-600 fade-in">We'd love to hear from you! Fill out the form below to send us a message.</p>
+      <div class="max-w-lg mx-auto mt-10">
+        <form class="bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+          <div class="mb-4">
+            <label class="block text-gray-700" for="name">Name</label>
+            <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-md" placeholder="Your name">
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700" for="email">Email</label>
+            <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-md" placeholder="Your email">
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700" for="message">Message</label>
+            <textarea id="message" class="w-full p-3 border border-gray-300 rounded-md" rows="4" placeholder="Your message"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 College Name. All rights reserved.</p>
+      <div class="mt-4">
+        <a href="#" class="hover:text-blue-300">Privacy Policy</a> |
+        <a href="#" class="hover:text-blue-300">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS for Animations -->
+  <script>
+    // Scroll-triggered fade-in animations
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+
+</html>
