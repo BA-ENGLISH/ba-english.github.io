@@ -1,0 +1,10 @@
+.hero {
+    background-image: url('https://envs.sh/ji8.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+.news .card {
+    margin-bottom: 20px;
+}
