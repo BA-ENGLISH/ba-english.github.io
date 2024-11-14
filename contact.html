@@ -7,49 +7,79 @@
     <title>What is My IP?</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
+            background: linear-gradient(135deg, #73a5ff, #5477f5);
             color: #333;
-            font-size: 2em;
-            margin-bottom: 20px;
         }
 
         .info-box {
             background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #333;
+            margin-bottom: 20px;
         }
 
         .info-item {
-            margin: 15px 0;
+            font-size: 1.2em;
+            margin: 20px 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
         }
 
         .info-item span {
             font-weight: bold;
-            color: #555;
+            color: #5477f5;
         }
+
+        /* Styling the footer */
+        footer {
+            position: fixed;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+            font-size: 0.9em;
+            color: #fff;
+        }
+
     </style>
 </head>
 <body>
-    <h1>Your IP Address and Network Information</h1>
     <div class="info-box">
-        <div class="info-item">IP Address: <span id="ip"></span></div>
-        <div class="info-item">Location: <span id="location"></span></div>
-        <div class="info-item">ISP (Network Provider): <span id="isp"></span></div>
-        <div class="info-item">Timezone: <span id="timezone"></span></div>
+        <h1>Your IP and Network Info</h1>
+        <div class="info-item">IP Address: <span id="ip">Loading...</span></div>
+        <div class="info-item">Location: <span id="location">Loading...</span></div>
+        <div class="info-item">ISP (Network Provider): <span id="isp">Loading...</span></div>
+        <div class="info-item">Timezone: <span id="timezone">Loading...</span></div>
     </div>
+
+    <footer>&copy; 2024 Ashik Muhammed | Network Info</footer>
 
     <script>
         // Fetch user's IP and network info using ipinfo.io API
-        fetch('https://ipinfo.io?token=62c60a3cdfe33a')  // Replace 'YOUR_API_TOKEN' with an actual API token from ipinfo.io
+        fetch('https://ipinfo.io?token=62c60a3cdfe33a')
             .then(response => response.json())
             .then(data => {
                 // Display the fetched data on the web page
