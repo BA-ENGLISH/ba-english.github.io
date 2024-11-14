@@ -73,6 +73,7 @@
         <div class="info-item">Location: <span id="location">Loading...</span></div>
         <div class="info-item">ISP (Network Provider): <span id="isp">Loading...</span></div>
         <div class="info-item">Timezone: <span id="timezone">Loading...</span></div>
+        <div class="info-item">Connection Type: <span id="connection-type">Detecting...</span></div>
     </div>
 
     <footer>&copy; 2024 Ashik Muhammed | Network Info</footer>
@@ -89,6 +90,36 @@
                 document.getElementById('timezone').innerText = data.timezone;
             })
             .catch(error => console.error('Error fetching IP info:', error));
+
+        // Detect connection type (WiFi or Ethernet)
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+
+        function updateConnectionType() {
+            const connectionTypeDisplay = document.getElementById('connection-type');
+            
+            if (connection) {
+                // Effective connection types: 'slow-2g', '2g', '3g', '4g', '5g', 'wifi', etc.
+                const type = connection.effectiveType;
+                
+                if (type === 'wifi') {
+                    connectionTypeDisplay.innerText = 'Wi-Fi';
+                } else if (type === 'ethernet') {
+                    connectionTypeDisplay.innerText = 'Ethernet'; // Assumed based on the conditions
+                } else {
+                    connectionTypeDisplay.innerText = type.toUpperCase();
+                }
+            } else {
+                connectionTypeDisplay.innerText = 'Unknown';
+            }
+        }
+
+        // Call the function on load
+        updateConnectionType();
+
+        // Update connection type if it changes
+        if (connection) {
+            connection.addEventListener('change', updateConnectionType);
+        }
     </script>
 </body>
 </html>
