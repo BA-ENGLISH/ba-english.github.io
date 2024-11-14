@@ -3,52 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BA English Department - Contact</title>
-    <!-- TailwindCSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="Check your IP address and network information">
+    <title>What is My IP?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        .info-item {
+            margin: 15px 0;
+        }
+
+        .info-item span {
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
+<body>
+    <h1>Your IP Address and Network Information</h1>
+    <div class="info-box">
+        <div class="info-item">IP Address: <span id="ip"></span></div>
+        <div class="info-item">Location: <span id="location"></span></div>
+        <div class="info-item">ISP (Network Provider): <span id="isp"></span></div>
+        <div class="info-item">Timezone: <span id="timezone"></span></div>
+    </div>
 
-    <!-- Navbar -->
-    <nav class="bg-blue-800 text-white p-4">
-        <div class="container mx-auto flex justify-between">
-            <h1 class="text-xl font-bold">BA English Department</h1>
-            <ul class="flex space-x-6">
-                <li><a href="index.html" class="hover:underline">Home</a></li>
-                <li><a href="news.html" class="hover:underline">News & Events</a></li>
-                <li><a href="gallery.html" class="hover:underline">Gallery</a></li>
-                <li><a href="blog.html" class="hover:underline">Blog</a></li>
-                <li><a href="contact.html" class="hover:underline">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Contact Section -->
-    <section class="py-16">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
-            <form class="bg-white p-8 shadow-md">
-                <div class="mb-4">
-                    <label for="name" class="block text-gray-700">Name</label>
-                    <input type="text" id="name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500">
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700">Email</label>
-                    <input type="email" id="email" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500">
-                </div>
-                <div class="mb-4">
-                    <label for="message" class="block text-gray-700">Message</label>
-                    <textarea id="message" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"></textarea>
-                </div>
-                <button type="submit" class="bg-blue-800 text-white px-4 py-2 rounded-md">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-blue-800 text-white text-center p-4">
-        <p>&copy; 2024 BA English Department. All Rights Reserved.</p>
-    </footer>
-
+    <script>
+        // Fetch user's IP and network info using ipinfo.io API
+        fetch('https://ipinfo.io?token=62c60a3cdfe33a')  // Replace 'YOUR_API_TOKEN' with an actual API token from ipinfo.io
+            .then(response => response.json())
+            .then(data => {
+                // Display the fetched data on the web page
+                document.getElementById('ip').innerText = data.ip;
+                document.getElementById('location').innerText = data.city + ', ' + data.region + ', ' + data.country;
+                document.getElementById('isp').innerText = data.org;
+                document.getElementById('timezone').innerText = data.timezone;
+            })
+            .catch(error => console.error('Error fetching IP info:', error));
+    </script>
 </body>
 </html>
