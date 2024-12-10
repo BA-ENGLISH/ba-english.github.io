@@ -125,33 +125,51 @@ nav ul li a {
 }
 
 /* Latest Releases Section */
-#featured-content {
-    padding: 60px 20px;
-    background-color: #fafafa;
+#latest-releases {
+    padding-top: 100px;
 }
 
-.featured-posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.post {
+.release-card {
+    border: 1px solid #ddd;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.post img {
+.release-card:hover {
+    transform: scale(1.05);
+}
+
+.release-image {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 200px;
+    object-fit: cover;
 }
 
-.post h3 {
-    font-size: 1.4rem;
-    margin-top: 10px;
+.release-content {
+    padding: 15px;
+}
+
+.release-content h5 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.release-content p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.btn-primary {
+    background-color: #0056b3;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #004494;
 }
 
 /* Testimonials Section */
